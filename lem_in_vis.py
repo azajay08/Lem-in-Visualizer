@@ -13,3 +13,4 @@ class Lem_in:
 
 	def __init__(self):
 		"""Initialize the visualizer"""
+		pygame.init()
