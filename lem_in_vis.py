@@ -4,10 +4,6 @@ import os
 from time import sleep
 from settings import Settings
 
-path = os.path.dirname(os.path.abspath(__file__))
-ant_img_path = pygame.image.load(os.path.join(path, 'images', "ant_img.bmp"))
-ant_img = pygame.transform.scale(ant_img_path, (50, 30))
-
 class Lem_in:
 	"""Class for lem_in visualizer"""
 
