@@ -1,6 +1,7 @@
 import pygame
 import sys
 import os
+from title import Title
 from time import sleep
 from settings import Settings
 
@@ -15,9 +16,12 @@ class Lem_in:
 			self.settings.screen_width, self.settings.screen_height))
 		pygame.display.set_caption("Lem_in Visualizer")
 
+		self.title = Title(self)
+
 	def run_vis(self):
-		""""""
+		"""Loops through program"""
 		self.screen.fill(self.settings.bg_colour)
+		self.title.draw_image_title()
 		while True:
 			self._check_events()
 			

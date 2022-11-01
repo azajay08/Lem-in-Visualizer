@@ -3,8 +3,8 @@ import os
 import pygame.font
 
 path = os.path.dirname(os.path.abspath(__file__))
-ant_img_path = pygame.image.load(os.path.join(path, 'images', "ant_img.bmp"))
-ant_img = pygame.transform.scale(ant_img_path, (50, 30))
+ant_img_path = pygame.image.load(os.path.join(path, 'images', 'ant_img.bmp'))
+ant_img = pygame.transform.scale(ant_img_path, (170, 200))
 
 class Title:
 	"""A class to print the title and image"""
@@ -17,7 +17,10 @@ class Title:
 
 		self.ant = ant_img
 		self.ant_rect = self.ant.get_rect()
-		self.ant_rect.top = self.screen.top + 20
-		self.ant_rect.right = self.screen.right - 20
+		self.ant_rect.right = self.screen_rect.right - 20
+		self.ant_rect.top = self.screen_rect.top + 20
 		
+	def draw_image_title(self):
+		"""Draw image and title"""
+		self.screen.blit(self.ant, self.ant_rect)
 
