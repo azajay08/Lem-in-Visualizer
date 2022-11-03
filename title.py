@@ -32,8 +32,8 @@ class Title:
 		self.title = self.title_font.render(title_str, True,
 					white, self.settings.bg_colour)
 		self.title_rect = self.title.get_rect()
-		self.title_rect.topleft = self.screen_rect.left + 70, self.screen_rect.top + 40
-		# self.title_rect.top = self.screen_rect.top + 20
+		self.title_rect.left = self.screen_rect.left + 70
+		self.title_rect.top = self.screen_rect.top + 40
 
 	def draw_image_title(self):
 		"""Draw image and title"""
