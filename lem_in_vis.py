@@ -4,6 +4,7 @@ import os
 from title import Title
 from time import sleep
 from settings import Settings
+from grid import Grid
 
 class Lem_in:
 	"""Class for lem_in visualizer"""
@@ -16,14 +17,16 @@ class Lem_in:
 			self.settings.screen_width, self.settings.screen_height))
 		pygame.display.set_caption("Lem_in Visualizer")
 
-		self.title = Title(self)
 		self.settings.read_ants()
 		self.settings.read_rooms()
+		self.title = Title(self)
+		self.grid = Grid(self)
 
 	def run_vis(self):
 		"""Loops through program"""
 		self.screen.fill(self.settings.bg_colour)
 		self.title.draw_image_title()
+		self.grid.draw_grid()
 		while True:
 			self._check_events()
 			
