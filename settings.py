@@ -1,5 +1,6 @@
 import pygame
 import os
+import sys
 
 black = (0, 0, 0)
 navy = (0, 0, 25)
@@ -15,3 +16,8 @@ class Settings:
 		self.bg_colour = navy
 
 		self.delay = 200
+
+	def read_ants(self):
+		"""read the amount of ants"""
+		self.line = sys.stdin.readline()
+		self.ants = int(self.line)
