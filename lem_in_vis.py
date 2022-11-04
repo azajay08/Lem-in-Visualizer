@@ -17,6 +17,8 @@ class Lem_in:
 		pygame.display.set_caption("Lem_in Visualizer")
 
 		self.title = Title(self)
+		self.settings.read_ants()
+		self.settings.read_rooms()
 
 	def run_vis(self):
 		"""Loops through program"""
