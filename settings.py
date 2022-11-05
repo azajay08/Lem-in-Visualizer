@@ -37,6 +37,8 @@ class Settings:
 		self.y_size = 0
 		self.s_com = 0
 		self.e_com = 0
+		self.smallesty = 100000000;
+		self.smallestx = 100000000;
 		for line in self.line:
 			line = line.split(' ')
 			if len(line) > 1:
@@ -44,6 +46,10 @@ class Settings:
 					self.x_size = int(line[1])
 				if int(line[2]) > self.y_size:
 					self.y_size = int(line[2])
+				if int(line[1]) < self.smallestx:
+					self.smallestx = int(line[1])
+				if int(line[2]) < self.smallesty:
+					self.smallesty = int(line[2])
 				new_room = {
 					'name': line[0],
 					'x': int(line[1]),
@@ -65,13 +71,14 @@ class Settings:
 				self.e_com = 1
 		self.div = 400
 		if (self.y_size < self.x_size):
-			self.grid_scale = int(self.x_size)
+			self.grid_scale = float(self.x_size)
 		else:
-			self.grid_scale = int(self.y_size)
-		if self.grid_scale > self.div:
-				self.grid_side = self.grid_scale / self.div
-		else:
-			self.grid_side = self.div / self.grid_scale
+			self.grid_scale = float(self.y_size)
+		self.grid_side = float(self.div / self.grid_scale)
+		self.scale_x = float(800 / self.x_size)
+		self.scale_y = float(400 / self.y_size)
+		if self.grid_side < 3:
+			self.grid_side = 3
 
 		self.source_img = pygame.Surface((self.grid_side, self.grid_side))
 		self.source_img.fill(green)
