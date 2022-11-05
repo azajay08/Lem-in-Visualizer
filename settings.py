@@ -33,6 +33,7 @@ class Settings:
 	def read_rooms(self):
 		"""read the rooms"""
 		self.rooms = []
+		self.connect = []
 		self.x_size = 0
 		self.y_size = 0
 		self.s_com = 0
@@ -40,8 +41,9 @@ class Settings:
 		self.smallesty = 100000000;
 		self.smallestx = 100000000;
 		for line in self.line:
+			line_l = line.split('-')
 			line = line.split(' ')
-			if len(line) > 1:
+			if len(line) == 3:
 				if int(line[1]) > self.x_size:
 					self.x_size = int(line[1])
 				if int(line[2]) > self.y_size:
@@ -63,12 +65,18 @@ class Settings:
 				if self.e_com == 1:
 					self.sink = line[0]
 					self.e_com = 0
-				
 				self.rooms.append(new_room)
 			if '##start' in line:
 				self.s_com = 1
 			if '##end' in line:
 				self.e_com = 1
+			if len(line_l) == 2:
+				new_connect = {
+					'l_1': line_l[0],
+					'l_2': line_l[1],
+				}
+				self.connect.append(new_connect)
+
 		self.div = 400
 		if (self.y_size < self.x_size):
 			self.grid_scale = float(self.x_size)
@@ -93,5 +101,8 @@ class Settings:
 		# for room in self.rooms:
 		# 	for k, v in room.items():
        	# 		 print(f"{k}: {v}")
+		for connections in self.connect:
+			print(connections['l_1'])
+			print(connections['l_2'])
 
 

@@ -8,6 +8,7 @@ p2_old = (0,139,139) # dark cyan
 p1_new = (255, 0, 127) # pink
 p2_new = (0,238,238) # light cyan
 navy = (0, 0, 25)
+white = (255, 255, 255)
 
 class Grid:
 	"""init grid"""
@@ -40,12 +41,12 @@ class Grid:
 			# 	print(f"{k}: {v}")
 			x_grid += ((room['x'] - self.settings.smallestx) * (self.settings.scale_x))
 			y_grid += ((room['y'] - self.settings.smallesty) * (self.settings.scale_y))
-			if room['source'] == 1:
-				self.screen.blit(self.settings.source_img, (x_grid, y_grid))
-			elif room['sink'] == 1:
-				self.screen.blit(self.settings.sink_img, (x_grid, y_grid))
-			else:
-				self.screen.blit(self.settings.room_img, (x_grid, y_grid))
+			# if room['source'] == 1:
+			# 	self.screen.blit(self.settings.source_img, (x_grid, y_grid))
+			# elif room['sink'] == 1:
+			# 	self.screen.blit(self.settings.sink_img, (x_grid, y_grid))
+			# else:
+			# 	self.screen.blit(self.settings.room_img, (x_grid, y_grid))
 			new_link = {
 				'name': room['name'],
 				'x_c': float(x_grid + center_xy),
@@ -54,4 +55,29 @@ class Grid:
 			self.links.append(new_link)
 			y_grid = self.rect.y
 			x_grid = self.rect.x
+		for connections in self.settings.connect:
+			print('yoooooooooooooo')
+			for link in self.links:
+				if connections['l_1'] in link['name']:
+					link1 = int(link['x_c']), int(link['y_c'])
+			for link in self.links:
+				if connections['l_2'] in link['name']:
+					link2 = int(link['x_c']), int(link['y_c'])
+					print('hello')
+					pygame.draw.line(self.screen, white, (link1), (link2))
+			# # print(link['name'])
+			# print(float(link['x_c']))
+			# print(float(link['y_c']))
+		for room in self.settings.rooms:
+			x_grid += ((room['x'] - self.settings.smallestx) * (self.settings.scale_x))
+			y_grid += ((room['y'] - self.settings.smallesty) * (self.settings.scale_y))
+			if room['source'] == 1:
+				self.screen.blit(self.settings.source_img, (x_grid, y_grid))
+			elif room['sink'] == 1:
+				self.screen.blit(self.settings.sink_img, (x_grid, y_grid))
+			else:
+				self.screen.blit(self.settings.room_img, (x_grid, y_grid))
+			y_grid = self.rect.y
+			x_grid = self.rect.x
+
 		# self.screen.blit(self.rect_img, self.rect)

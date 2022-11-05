@@ -38,4 +38,4 @@ class Title:
 		"""Draw image and title"""
 		self.screen.blit(self.ant, self.ant_rect)
 		self.screen.blit(self.title, self.title_rect)
-		pygame.draw.line(self.screen, white, (100, 100), (400, 400))
+		# pygame.draw.line(self.screen, white, (100, 100), (400, 400))
