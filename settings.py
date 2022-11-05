@@ -101,8 +101,8 @@ class Settings:
 		# for room in self.rooms:
 		# 	for k, v in room.items():
        	# 		 print(f"{k}: {v}")
-		for connections in self.connect:
-			print(connections['l_1'])
-			print(connections['l_2'])
+		# for connections in self.connect:
+		# 	print(connections['l_1'])
+		# 	print(connections['l_2'])
 
 

@@ -56,15 +56,15 @@ class Grid:
 			y_grid = self.rect.y
 			x_grid = self.rect.x
 		for connections in self.settings.connect:
-			print('yoooooooooooooo')
 			for link in self.links:
 				if connections['l_1'] in link['name']:
 					link1 = int(link['x_c']), int(link['y_c'])
+					print(f"Link1: {link1}")
 			for link in self.links:
 				if connections['l_2'] in link['name']:
 					link2 = int(link['x_c']), int(link['y_c'])
-					print('hello')
-					pygame.draw.line(self.screen, white, (link1), (link2))
+					print(f"Link2: {link2}")
+			pygame.draw.line(self.screen, white, (link1), (link2))
 			# # print(link['name'])
 			# print(float(link['x_c']))
 			# print(float(link['y_c']))
