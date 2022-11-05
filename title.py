@@ -26,8 +26,6 @@ class Title:
 		self.ant_rect.right = self.screen_rect.right - 20
 		self.ant_rect.top = self.screen_rect.top + 20
 		
-		
-
 		title_str = "Lem_in"
 		self.title = self.title_font.render(title_str, True,
 					white, self.settings.bg_colour)
@@ -35,7 +33,9 @@ class Title:
 		self.title_rect.left = self.screen_rect.left + 70
 		self.title_rect.top = self.screen_rect.top + 40
 
+
 	def draw_image_title(self):
 		"""Draw image and title"""
 		self.screen.blit(self.ant, self.ant_rect)
 		self.screen.blit(self.title, self.title_rect)
+		pygame.draw.line(self.screen, white, (100, 100), (400, 400))

@@ -63,12 +63,15 @@ class Settings:
 				self.s_com = 1
 			if '##end' in line:
 				self.e_com = 1
-
+		self.div = 400
 		if (self.y_size < self.x_size):
 			self.grid_scale = int(self.x_size)
 		else:
 			self.grid_scale = int(self.y_size)
-		self.grid_side = 350 / self.grid_scale - 1
+		if self.grid_scale > self.div:
+				self.grid_side = self.grid_scale / self.div
+		else:
+			self.grid_side = self.div / self.grid_scale
 
 		self.source_img = pygame.Surface((self.grid_side, self.grid_side))
 		self.source_img.fill(green)

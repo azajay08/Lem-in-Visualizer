@@ -18,12 +18,16 @@ class Grid:
 		self.screen_rect = self.screen.get_rect()
 		self.settings = lv.settings
 
-		self.width, self.height = 350, 350
+		self.width, self.height = 800, 400
 		self.grid_colour = grey
 
 		self.rect = pygame.Rect(0, 0, self.width, self.height)
-		self.rect.center = self.screen_rect.center
-		self.rect.bottom = self.screen_rect.bottom - 200
+		self.rect.x = 400
+		self.rect.y = 300
+		self.rect_img = pygame.Surface((self.width, self.height))
+		self.rect_img.fill(grey)
+		# self.screen.blit(self.rect_img, self.rect)
+
 
 	def draw_grid(self):
 		"""draws the map"""
@@ -42,5 +46,6 @@ class Grid:
 				self.screen.blit(self.settings.room_img, (x_grid, y_grid))
 			y_grid = self.rect.y
 			x_grid = self.rect.x
+		# self.screen.blit(self.rect_img, self.rect)
 
 
