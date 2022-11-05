@@ -21,10 +21,7 @@ class Settings:
 		self.delay = 200
 
 		self.line = sys.stdin.read().splitlines()
-		# for line in self.line:
-		# 	print(line)
 		
-
 	def read_ants(self):
 		"""read the amount of ants"""
 		self.ants = int(self.line[0])
@@ -94,15 +91,3 @@ class Settings:
 		self.sink_img.fill(red)
 		self.room_img = pygame.Surface((self.grid_side, self.grid_side))
 		self.room_img.fill(blue)
-		# print(self.source)
-		# print(self.sink)
-		# print(self.x_size)
-		# print(self.y_size)qqq
-		# for room in self.rooms:
-		# 	for k, v in room.items():
-       	# 		 print(f"{k}: {v}")
-		# for connections in self.connect:
-		# 	print(connections['l_1'])
-		# 	print(connections['l_2'])
-
-

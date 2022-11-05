@@ -25,10 +25,8 @@ class Grid:
 		self.rect = pygame.Rect(0, 0, self.width, self.height)
 		self.rect.x = 200
 		self.rect.y = 300
-		self.rect_img = pygame.Surface((self.width, self.height))
-		self.rect_img.fill(grey)
-		# self.screen.blit(self.rect_img, self.rect)
-
+		# self.rect_img = pygame.Surface((self.width, self.height))
+		# self.rect_img.fill(grey)
 
 	def draw_grid(self):
 		"""draws the map"""
@@ -37,16 +35,8 @@ class Grid:
 		center_xy = self.settings.grid_side / 2
 		self.links = []
 		for room in self.settings.rooms:
-			# for k, v in room.items():
-			# 	print(f"{k}: {v}")
 			x_grid += ((room['x'] - self.settings.smallestx) * (self.settings.scale_x))
 			y_grid += ((room['y'] - self.settings.smallesty) * (self.settings.scale_y))
-			# if room['source'] == 1:
-			# 	self.screen.blit(self.settings.source_img, (x_grid, y_grid))
-			# elif room['sink'] == 1:
-			# 	self.screen.blit(self.settings.sink_img, (x_grid, y_grid))
-			# else:
-			# 	self.screen.blit(self.settings.room_img, (x_grid, y_grid))
 			new_link = {
 				'name': room['name'],
 				'x_c': float(x_grid + center_xy),
@@ -65,9 +55,6 @@ class Grid:
 					link2 = int(link['x_c']), int(link['y_c'])
 					print(f"Link2: {link2}")
 			pygame.draw.line(self.screen, white, (link1), (link2))
-			# # print(link['name'])
-			# print(float(link['x_c']))
-			# print(float(link['y_c']))
 		for room in self.settings.rooms:
 			x_grid += ((room['x'] - self.settings.smallestx) * (self.settings.scale_x))
 			y_grid += ((room['y'] - self.settings.smallesty) * (self.settings.scale_y))
@@ -79,5 +66,3 @@ class Grid:
 				self.screen.blit(self.settings.room_img, (x_grid, y_grid))
 			y_grid = self.rect.y
 			x_grid = self.rect.x
-
-		# self.screen.blit(self.rect_img, self.rect)

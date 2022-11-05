@@ -66,7 +66,6 @@ class Title:
 		"""Draw instructions and title"""
 		# self.screen.blit(self.ant, self.ant_rect)
 		self.screen.blit(self.title, self.title_rect)
-		# pygame.draw.line(self.screen, white, (100, 100), (400, 400))
 		self.screen.blit(self.start_box, (800, 50))
 		self.screen.blit(self.sink_box, (800, 100))
 		self.screen.blit(self.empty_room, (800, 150))
