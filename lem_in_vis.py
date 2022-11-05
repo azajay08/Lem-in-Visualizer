@@ -31,6 +31,7 @@ class Lem_in:
 			self._check_events()
 			
 			pygame.display.flip()
+			pygame.time.delay(int(self.settings.delay))
 
 	def _check_events(self):
 		"""Function that check events in the program"""
