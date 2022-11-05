@@ -25,7 +25,7 @@ class Lem_in:
 	def run_vis(self):
 		"""Loops through program"""
 		self.screen.fill(self.settings.bg_colour)
-		self.title.draw_image_title()
+		self.title.draw_title_instructions()
 		self.grid.draw_grid()
 		while True:
 			self._check_events()
