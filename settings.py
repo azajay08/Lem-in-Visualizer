@@ -7,6 +7,7 @@ navy = (0, 0, 25)
 red = (255, 0, 0)
 green = (0, 255, 0)
 blue = (0, 0, 255)
+white = (255, 255, 255)
 
 class Settings:
 	"""Class to store settings variables"""
@@ -91,3 +92,5 @@ class Settings:
 		self.sink_img.fill(red)
 		self.room_img = pygame.Surface((self.grid_side, self.grid_side))
 		self.room_img.fill(blue)
+		self.midway = pygame.Surface((self.grid_side / 3, self.grid_side / 3))
+		self.midway.fill(white)
