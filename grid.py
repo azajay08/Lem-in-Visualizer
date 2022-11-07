@@ -47,14 +47,15 @@ class Grid:
 			y_grid = self.rect.y
 			x_grid = self.rect.x
 		for connections in self.settings.connect:
+			print(connections)
 			for link in self.links:
-				if connections['l_1'] in link['name']:
+				if connections['l_1'] == link['name']:
 					link1 = int(link['x_c']), int(link['y_c'])
 					# x1 = int(link['x_c'])
 					# y1 = int(link['y_c'])
 					# print(f"Link1: {link1}")
 			for link in self.links:
-				if connections['l_2'] in link['name']:
+				if connections['l_2'] == link['name']:
 					link2 = int(link['x_c']), int(link['y_c'])
 					# x2 = int(link['x_c'])
 					# y2 = int(link['y_c'])
@@ -62,6 +63,7 @@ class Grid:
 			# coord_x = (x1 + x2) / 2 - center_mid
 			# coord_y = (y1 + y2) / 2 - center_mid
 			pygame.draw.line(self.screen, white, (link1), (link2))
+			print(link1, link2)
 			# self.screen.blit(self.settings.midway, (coord_x, coord_y))
 		for room in self.settings.rooms:
 			x_grid += ((room['x'] - self.settings.smallestx) * (self.settings.scale_x))

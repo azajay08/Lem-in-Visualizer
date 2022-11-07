@@ -8,6 +8,7 @@ red = (255, 0, 0)
 green = (0, 255, 0)
 blue = (0, 0, 255)
 white = (255, 255, 255)
+orange = (255, 102, 0)
 
 class Settings:
 	"""Class to store settings variables"""
@@ -83,8 +84,8 @@ class Settings:
 		self.grid_side = float(self.div / self.grid_scale)
 		self.scale_x = float(800 / self.x_size)
 		self.scale_y = float(400 / self.y_size)
-		if self.grid_side < 3:
-			self.grid_side = 3
+		if self.grid_side < 10:
+			self.grid_side = 10
 
 		self.source_img = pygame.Surface((self.grid_side, self.grid_side))
 		self.source_img.fill(green)
@@ -94,3 +95,5 @@ class Settings:
 		self.room_img.fill(blue)
 		self.midway = pygame.Surface((self.grid_side / 3, self.grid_side / 3))
 		self.midway.fill(white)
+		self.occupied = pygame.Surface((self.grid_side, self.grid_side))
+		self.occupied.fill(orange)

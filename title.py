@@ -46,8 +46,8 @@ class Title:
 		self.sink_box.fill(red)
 		self.empty_room = pygame.Surface((25, 25))
 		self.empty_room.fill(blue)
-		self.occupied = pygame.Surface((25, 25))
-		self.occupied.fill(orange)
+		self.occupied_f = pygame.Surface((25, 25))
+		self.occupied_f.fill(orange)
 
 		start_str = "Starting room"
 		self.start = self.instructions_font.render(start_str, True,
@@ -69,7 +69,7 @@ class Title:
 		self.screen.blit(self.start_box, (800, 50))
 		self.screen.blit(self.sink_box, (800, 100))
 		self.screen.blit(self.empty_room, (800, 150))
-		self.screen.blit(self.occupied, (800, 200))
+		self.screen.blit(self.occupied_f, (800, 200))
 		self.screen.blit(self.start, (850, 50))
 		self.screen.blit(self.sink, (850, 100))
 		self.screen.blit(self.empty, (850, 150))
