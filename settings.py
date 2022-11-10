@@ -9,6 +9,7 @@ green = (0, 255, 0)
 blue = (0, 0, 255)
 white = (255, 255, 255)
 orange = (255, 102, 0)
+blue_bg = (15, 30, 50)
 
 class Settings:
 	"""Class to store settings variables"""
@@ -18,7 +19,7 @@ class Settings:
 		# Screen settings
 		self.screen_width = 1200
 		self.screen_height = 800
-		self.bg_colour = navy
+		self.bg_colour = blue_bg
 
 		self.delay = 200
 
