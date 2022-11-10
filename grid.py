@@ -11,7 +11,7 @@ navy = (0, 0, 25)
 white = (255, 255, 255)
 
 class Grid:
-	"""init grid"""
+	"""Class for the grid(map)"""
 	def __init__(self, lv):
 		"""Init grid"""
 
