@@ -6,8 +6,8 @@ white = (255, 255, 255)
 grey = (175, 175, 175)
 black = (0, 0, 0)
 navy = (0, 0, 25)
-red = (255, 0, 0)
-green = (0, 255, 0)
+red = (200, 50, 50)
+green = (100, 255, 100)
 blue = (0, 0, 255)
 orange = (255, 102, 0)
 
@@ -47,8 +47,8 @@ class Title:
 		self.sink_box.fill(red)
 		self.empty_room = pygame.Surface((25, 25))
 		self.empty_room.fill(grey)
-		self.occupied_f = pygame.Surface((25, 25))
-		self.occupied_f.fill(orange)
+		self.ant_box = pygame.Surface((25, 25))
+		self.ant_box.fill(orange)
 
 		start_str = "Starting room"
 		self.start = self.instructions_font.render(start_str, True,
@@ -59,8 +59,8 @@ class Title:
 		empty_str = "Empty room"
 		self.empty = self.instructions_font.render(empty_str, True,
 					white, self.settings.bg_colour)
-		occ_str = "Ants"
-		self.occ = self.instructions_font.render(occ_str, True,
+		ant_str = "Ants"
+		self.ant = self.instructions_font.render(ant_str, True,
 					white, self.settings.bg_colour)
 
 	def draw_title_instructions(self):
@@ -70,9 +70,9 @@ class Title:
 		self.screen.blit(self.start_box, (800, 50))
 		self.screen.blit(self.sink_box, (800, 100))
 		self.screen.blit(self.empty_room, (800, 150))
-		self.screen.blit(self.occupied_f, (800, 200))
+		self.screen.blit(self.ant_box, (800, 200))
 		self.screen.blit(self.start, (850, 50))
 		self.screen.blit(self.sink, (850, 100))
 		self.screen.blit(self.empty, (850, 150))
-		self.screen.blit(self.occ, (850, 200))
+		self.screen.blit(self.ant, (850, 200))
 		
