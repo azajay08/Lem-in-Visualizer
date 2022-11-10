@@ -3,8 +3,8 @@ import os
 import pygame.font
 
 grey = (32, 32, 32)
+cyan_line = (0,139,139)
 p1_old = (139,10,80) #dark pink
-p2_old = (0,139,139) # dark cyan
 p1_new = (255, 0, 127) # pink
 p2_new = (0,238,238) # light cyan
 navy = (0, 0, 25)
@@ -62,7 +62,7 @@ class Grid:
 					# print(f"Link2: {link2}")
 			# coord_x = (x1 + x2) / 2 - center_mid
 			# coord_y = (y1 + y2) / 2 - center_mid
-			pygame.draw.line(self.screen, white, (link1), (link2))
+			pygame.draw.line(self.screen, cyan_line, (link1), (link2))
 			print(link1, link2)
 			# self.screen.blit(self.settings.midway, (coord_x, coord_y))
 		for room in self.settings.rooms:

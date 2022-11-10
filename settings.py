@@ -3,6 +3,7 @@ import os
 import sys
 
 black = (0, 0, 0)
+grey = (175, 175, 175)
 navy = (0, 0, 25)
 red = (255, 0, 0)
 green = (0, 255, 0)
@@ -10,6 +11,7 @@ blue = (0, 0, 255)
 white = (255, 255, 255)
 orange = (255, 102, 0)
 blue_bg = (15, 30, 50)
+cyan_line = (0,139,139)
 
 class Settings:
 	"""Class to store settings variables"""
@@ -93,7 +95,7 @@ class Settings:
 		self.sink_img = pygame.Surface((self.grid_side, self.grid_side))
 		self.sink_img.fill(red)
 		self.room_img = pygame.Surface((self.grid_side, self.grid_side))
-		self.room_img.fill(blue)
+		self.room_img.fill(grey)
 		self.midway = pygame.Surface((self.grid_side / 3, self.grid_side / 3))
 		self.midway.fill(white)
 		self.occupied = pygame.Surface((self.grid_side, self.grid_side))

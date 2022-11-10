@@ -3,6 +3,7 @@ import os
 import pygame.font
 
 white = (255, 255, 255)
+grey = (175, 175, 175)
 black = (0, 0, 0)
 navy = (0, 0, 25)
 red = (255, 0, 0)
@@ -45,7 +46,7 @@ class Title:
 		self.sink_box = pygame.Surface((25, 25))
 		self.sink_box.fill(red)
 		self.empty_room = pygame.Surface((25, 25))
-		self.empty_room.fill(blue)
+		self.empty_room.fill(grey)
 		self.occupied_f = pygame.Surface((25, 25))
 		self.occupied_f.fill(orange)
 
@@ -58,7 +59,7 @@ class Title:
 		empty_str = "Empty room"
 		self.empty = self.instructions_font.render(empty_str, True,
 					white, self.settings.bg_colour)
-		occ_str = "Occupied room"
+		occ_str = "Ants"
 		self.occ = self.instructions_font.render(occ_str, True,
 					white, self.settings.bg_colour)
 
