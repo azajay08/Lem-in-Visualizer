@@ -24,7 +24,7 @@ class Grid:
 
 		self.rect = pygame.Rect(0, 0, self.width, self.height)
 		self.rect.x = 200
-		self.rect.y = 300
+		self.rect.y = 280
 		# self.rect_img = pygame.Surface((self.width, self.height))
 		# self.rect_img.fill(grey)
 
