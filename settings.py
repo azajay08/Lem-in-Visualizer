@@ -31,7 +31,7 @@ class Settings:
 	def read_ants(self):
 		"""read the amount of ants"""
 		self.ants = int(self.line[0])
-		print(self.ants)
+		# print(self.ants)
 
 	def read_rooms(self):
 		"""read the rooms"""
