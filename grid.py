@@ -20,13 +20,10 @@ class Grid:
 		self.settings = lv.settings
 
 		self.width, self.height = 800, 400
-		# self.grid_colour = grey
 
 		self.rect = pygame.Rect(0, 0, self.width, self.height)
 		self.rect.x = 200
 		self.rect.y = 280
-		# self.rect_img = pygame.Surface((self.width, self.height))
-		# self.rect_img.fill(grey)
 
 	def draw_grid(self):
 		"""draws the map"""
@@ -47,24 +44,20 @@ class Grid:
 			y_grid = self.rect.y
 			x_grid = self.rect.x
 		for connections in self.settings.connect:
-			# print(connections)
 			for link in self.links:
 				if connections['l_1'] == link['name']:
 					link1 = int(link['x_c']), int(link['y_c'])
 					x1 = int(link['x_c'])
 					y1 = int(link['y_c'])
-					# print(f"Link1: {link1}")
 			for link in self.links:
 				if connections['l_2'] == link['name']:
 					link2 = int(link['x_c']), int(link['y_c'])
 					x2 = int(link['x_c'])
 					y2 = int(link['y_c'])
-					# print(f"Link2: {link2}")
 			coord_x = (x1 + x2) / 2 - center_mid
 			coord_y = (y1 + y2) / 2 - center_mid
 			pygame.draw.line(self.screen, light_blue, (link1), (link2))
-			# print(link1, link2)
-			self.screen.blit(self.settings.midway, (coord_x, coord_y))
+			# self.screen.blit(self.settings.midway, (coord_x, coord_y))
 		for room in self.settings.rooms:
 			x_grid += ((room['x'] - self.settings.smallestx) * (self.settings.scale_x))
 			y_grid += ((room['y'] - self.settings.smallesty) * (self.settings.scale_y))
