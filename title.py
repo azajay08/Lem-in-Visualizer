@@ -46,7 +46,7 @@ class Title:
 		self.sink_box = pygame.Surface((25, 25))
 		self.sink_box.fill(red)
 		self.empty_room = pygame.Surface((25, 25))
-		self.empty_room.fill(grey)
+		self.empty_room.fill(blue)
 		self.ant_box = pygame.Surface((25, 25))
 		self.ant_box.fill(orange)
 
