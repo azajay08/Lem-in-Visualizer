@@ -9,6 +9,7 @@ p1_new = (255, 0, 127) # pink
 p2_new = (0,238,238) # light cyan
 navy = (0, 0, 25)
 white = (255, 255, 255)
+white_blue = (170, 230, 255)
 
 class Grid:
 	"""Class for the grid(map)"""
@@ -56,7 +57,7 @@ class Grid:
 					y2 = int(link['y_c'])
 			coord_x = (x1 + x2) / 2 - center_mid
 			coord_y = (y1 + y2) / 2 - center_mid
-			pygame.draw.line(self.screen, light_blue, (link1), (link2))
+			pygame.draw.line(self.screen, white_blue, (link1), (link2))
 			# self.screen.blit(self.settings.midway, (coord_x, coord_y))
 		for room in self.settings.rooms:
 			x_grid += ((room['x'] - self.settings.smallestx) * (self.settings.scale_x))
