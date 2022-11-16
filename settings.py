@@ -43,19 +43,12 @@ class Settings:
 		self.e_com = 0
 		self.smallesty = 100000000;
 		self.smallestx = 100000000;
+		map_len = len(self.line)
 		i = -1
 		for line in self.line:
-			# print(i)
-			if line[0] == 'L':
-				break
-			i += 1
-			if line[0] == ' ':
-				continue
-			print(self.line[i])
-			# print(line[0])
+			line_m = line
 			line_l = line.split('-')
 			line = line.split(' ')
-			# print(line[0])
 			if len(line) == 3:
 				if int(line[1]) > self.x_size:
 					self.x_size = int(line[1])
@@ -89,13 +82,15 @@ class Settings:
 					'l_2': line_l[1],
 				}
 				self.connect.append(new_connect)
+			if line_m[:1] == 'L':
+				break
+			i += 1
+			if line_m[:1] == ' ':
+				continue
 
-		print(self.line[4])
-		print(self.line[15])
-
-		# while self.line[i] != None:
-		# 	print(self.line[i])
-		# 	i += 1
+		while i < map_len:
+			# This is for the moves, it is indexed at the move list
+			i += 1
 
 		self.div = 400
 		if (self.y_size < self.x_size):
