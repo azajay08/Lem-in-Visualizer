@@ -5,6 +5,7 @@ from title import Title
 from time import sleep
 from settings import Settings
 from grid import Grid
+from ants import Ants
 
 class Lem_in:
 	"""Class for lem_in visualizer"""
@@ -21,6 +22,7 @@ class Lem_in:
 		self.settings.read_rooms()
 		self.title = Title(self)
 		self.grid = Grid(self)
+		self.ants = Ants(self)
 
 	def run_vis(self):
 		"""Loops through program"""
@@ -29,7 +31,7 @@ class Lem_in:
 		self.grid.draw_grid()
 		while True:
 			self._check_events()
-			
+			self.ants.draw_ants()
 			pygame.display.flip()
 			pygame.time.delay(int(self.settings.delay))
 
