@@ -22,3 +22,7 @@ class Ants:
 
 	def draw_ants(self):
 		"""functions for drawing the ants"""
+		for line in self.line:
+			line = line.split(' ')
+			if line[:1] == 'L':
+				break
