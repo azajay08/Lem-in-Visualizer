@@ -18,6 +18,7 @@ class Ants:
 		self.screen = lv.screen
 		self.screen_rect = self.screen.get_rect()
 		self.settings = lv.settings
+		self.line = self.settings.line
 
 	def draw_ants(self):
 		"""functions for drawing the ants"""
