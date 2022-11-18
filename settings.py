@@ -49,6 +49,11 @@ class Settings:
 			line_m = line
 			line_l = line.split('-')
 			line = line.split(' ')
+			i += 1
+			if line_m[:1] == 'L':
+				break
+			if line_m[:1] == ' ':
+				continue
 			if len(line) == 3:
 				if int(line[1]) > self.x_size:
 					self.x_size = int(line[1])
@@ -76,21 +81,22 @@ class Settings:
 				self.s_com = 1
 			if '##end' in line:
 				self.e_com = 1
+			if '#' in line and self.e_com == 0 and self.s_com == 0:
+				continue
 			if len(line_l) == 2:
 				new_connect = {
 					'l_1': line_l[0],
 					'l_2': line_l[1],
 				}
 				self.connect.append(new_connect)
-			if line_m[:1] == 'L':
-				break
-			i += 1
-			if line_m[:1] == ' ':
-				continue
 
-		while i < map_len:
-			# This is for the moves, it is indexed at the move list
-			i += 1
+
+		# while i < map_len:
+		# 	# This is for the moves, it is indexed at the move list
+		# 	print(self.line[i])
+		# 	i += 1
+		self.map_len = map_len
+		self.i = i
 
 		self.div = 400
 		if (self.y_size < self.x_size):

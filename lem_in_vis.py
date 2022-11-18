@@ -30,9 +30,11 @@ class Lem_in:
 		self.title.draw_title_instructions()
 		self.grid.draw_grid()
 		while True:
+			pygame.display.flip()
 			self._check_events()
 			self.ants.draw_ants()
-			pygame.display.flip()
+			
+			# pygame.time.delay(1000)
 			pygame.time.delay(int(self.settings.delay))
 
 	def _check_events(self):
