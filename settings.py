@@ -24,7 +24,7 @@ class Settings:
 		self.screen_height = 800
 		self.bg_colour = blue_bg
 
-		self.delay = 200
+		self.delay = 500
 
 		self.line = sys.stdin.read().splitlines()
 		
@@ -69,6 +69,7 @@ class Settings:
 					'y': int(line[2]),
 					'source': self.s_com,
 					'sink': self.e_com,
+					'used': 0,
 				}
 				if self.s_com == 1:
 					self.source = line[0]
@@ -91,8 +92,7 @@ class Settings:
 				self.connect.append(new_connect)
 
 		self.map_len = map_len
-		self.i = i
-		# x = 0
+		self.i = map_len - i
 		self.s_line = str(self.line[i]).rstrip(' ') + '\n'
 		i += 1
 
@@ -101,7 +101,7 @@ class Settings:
 			# print(self.s_line)
 			i += 1
 		self.split_line = self.s_line.split('\n') 
-		print(self.split_line)
+		print(self.split_line[0])
 
 		self.div = 400
 		if (self.y_size < self.x_size):

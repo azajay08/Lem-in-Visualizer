@@ -29,13 +29,17 @@ class Lem_in:
 		self.screen.fill(self.settings.bg_colour)
 		self.title.draw_title_instructions()
 		self.grid.draw_grid()
+		i = 0
 		while True:
+			if i == self.settings.i:
+				i = 0
 			pygame.display.flip()
 			self._check_events()
-			self.ants.draw_ants()
+			self.ants.draw_ants(self.settings.split_line[i])
 			
 			# pygame.time.delay(1000)
 			pygame.time.delay(int(self.settings.delay))
+			i += 1
 
 	def _check_events(self):
 		"""Function that check events in the program"""
@@ -46,24 +50,12 @@ class Lem_in:
 				if event.key == pygame.K_q:
 					sys.exit()
 				#check buttons or speed
-				if event.key == pygame.K_1:
-					self.settings.delay = 300
-				if event.key == pygame.K_2:
-					self.settings.delay = 200
-				if event.key == pygame.K_3:
-					self.settings.delay = 100
-				if event.key == pygame.K_4:
-					self.settings.delay = 75
-				if event.key == pygame.K_5:
-					self.settings.delay = 50
-				if event.key == pygame.K_6:
-					self.settings.delay = 25
-				if event.key == pygame.K_7:
-					self.settings.delay = 10
-				if event.key == pygame.K_8:
-					self.settings.delay = 1
-				if event.key == pygame.K_9:
-					self.settings.delay = 0.000001
+				if event.key == pygame.K_DOWN:
+					self.settings.delay *= 1.1
+				if event.key == pygame.K_UP:
+					self.settings.delay /= 1.1
+				
+
 
 if __name__ == '__main__':
 	lv = Lem_in()
