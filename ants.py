@@ -29,24 +29,29 @@ class Ants:
 		"""functions for drawing the ants"""
 		
 		for line in self.line:
-			# line = line.split(' ')
-			
 			i = 0
+			# pygame.time.delay(500)
 			if line[:1] == 'L':
 				line = line.rstrip("\n")
 				line = line.rstrip(" ")
 				line = line.split(' ')
-				pygame.time.delay(1000)
 				while i < len(line):
 					y_grid = self.rect.y
 					x_grid = self.rect.x
 					line_l = line[i].split('-')
 					r_name = str(line_l[-1])
 					for room in self.rooms:
+						
 						if room['name'] == r_name:
+							# print(room)
 							x_grid += ((room['x'] - self.settings.smallestx) * (self.settings.scale_x))
 							y_grid += ((room['y'] - self.settings.smallesty) * (self.settings.scale_y))
-							self.screen.blit(self.settings.occupied, (x_grid, y_grid))
+							if room['source'] == 1:
+								self.screen.blit(self.settings.source_img, (x_grid, y_grid))
+							elif room['sink'] == 1:
+								self.screen.blit(self.settings.sink_img, (x_grid, y_grid))
+							else:
+								self.screen.blit(self.settings.occupied, (x_grid, y_grid))
 						else:
 							x_grid += ((room['x'] - self.settings.smallestx) * (self.settings.scale_x))
 							y_grid += ((room['y'] - self.settings.smallesty) * (self.settings.scale_y))

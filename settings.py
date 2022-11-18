@@ -90,13 +90,18 @@ class Settings:
 				}
 				self.connect.append(new_connect)
 
-
-		# while i < map_len:
-		# 	# This is for the moves, it is indexed at the move list
-		# 	print(self.line[i])
-		# 	i += 1
 		self.map_len = map_len
 		self.i = i
+		# x = 0
+		self.s_line = str(self.line[i]).rstrip(' ') + '\n'
+		i += 1
+
+		while i < map_len:
+			self.s_line += str(self.line[i]).rstrip(' ') + '\n'
+			# print(self.s_line)
+			i += 1
+		self.split_line = self.s_line.split('\n') 
+		print(self.split_line)
 
 		self.div = 400
 		if (self.y_size < self.x_size):
