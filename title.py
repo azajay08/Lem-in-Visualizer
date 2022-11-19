@@ -8,7 +8,7 @@ black = (0, 0, 0)
 navy = (0, 0, 25)
 red = (200, 50, 50)
 green = (100, 255, 100)
-blue = (0, 0, 255)
+blue = (50, 100, 255)
 orange = (255, 102, 0)
 
 path = os.path.dirname(os.path.abspath(__file__))
@@ -26,7 +26,7 @@ class Title:
 		self.screen_rect = self.screen.get_rect()
 		self.settings = lv.settings
 
-		self.title_font = pygame.font.Font(tfont, 180)
+		self.title_font = pygame.font.Font(tfont, 100)
 		self.instructions_font = pygame.font.Font(ifont, 30)
 
 		# self.ant = ant_img
@@ -39,7 +39,7 @@ class Title:
 					white, self.settings.bg_colour)
 		self.title_rect = self.title.get_rect()
 		self.title_rect.left = self.screen_rect.left + 70
-		self.title_rect.top = self.screen_rect.top + 40
+		self.title_rect.top = self.screen_rect.top + 80
 
 		self.start_box = pygame.Surface((25, 25))
 		self.start_box.fill(green)
