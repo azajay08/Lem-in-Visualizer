@@ -33,3 +33,14 @@ l-n
 n-m
 g-k
 k-m
+L1-a L2-c L3-e 
+L1-d L4-a L2-f L5-c L3-h L6-e 
+L1-i L4-d L7-a L2-g L5-f L8-c L3-l L6-h L9-e 
+L1-j L4-i L7-d L10-a L2-k L5-g L8-f L11-c L3-n L6-l L9-h L12-e 
+L1-m L4-j L7-i L10-d L13-a L2-m L5-k L8-g L11-f L14-c L3-m L6-n L9-l L12-h L15-e 
+L4-m L7-j L10-i L13-d L16-a L5-m L8-k L11-g L14-f L17-c L6-m L9-n L12-l L15-h L18-e 
+L7-m L10-j L13-i L16-d L19-a L8-m L11-k L14-g L17-f L20-c L9-m L12-n L15-l L18-h 
+L10-m L13-j L16-i L19-d L11-m L14-k L17-g L20-f L12-m L15-n L18-l 
+L13-m L16-j L19-i L14-m L17-k L20-g L15-m L18-n 
+L16-m L19-j L17-m L20-k L18-m 
+L19-m L20-m 

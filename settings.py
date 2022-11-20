@@ -9,7 +9,7 @@ red = (200, 50, 50)
 green = (100, 255, 100)
 blue = (50, 100, 255)
 white = (255, 255, 255)
-orange = (255, 102, 0)
+# orange = (255, 102, 0)
 blue_bg = (7, 30, 50)
 cyan_line = (0,139,139)
 light_blue = (116, 212, 205)
@@ -114,6 +114,8 @@ class Settings:
 		if self.grid_side < 10:
 			self.grid_side = 10
 
+		self.r = 255
+		self.orange = (self.r, 100, 0)
 		self.source_img = pygame.Surface((self.grid_side, self.grid_side))
 		self.source_img.fill(green)
 		self.sink_img = pygame.Surface((self.grid_side, self.grid_side))
@@ -123,4 +125,4 @@ class Settings:
 		self.midway = pygame.Surface((self.grid_side / 3, self.grid_side / 3))
 		self.midway.fill(light_blue)
 		self.occupied = pygame.Surface((self.grid_side, self.grid_side))
-		self.occupied.fill(orange)
+		self.occupied.fill(self.orange)
