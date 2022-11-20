@@ -40,6 +40,22 @@ class Lem_in:
 			# pygame.time.delay(1000)
 			pygame.time.delay(int(self.settings.delay))
 			i += 1
+	def pause_vis(self):
+		"""Function that pauses the game"""
+		paused = True
+		while paused:
+			for event in pygame.event.get():
+				if event.type == pygame.KEYDOWN:
+					if event.key == pygame.K_q:
+						pygame.quit()
+						exit()
+					if event.key == pygame.K_SPACE:
+						paused = False
+						pygame.display.update()
+				if event.type == pygame.QUIT:
+					pygame.quit()
+					exit()
+
 
 	def _check_events(self):
 		"""Function that check events in the program"""
@@ -54,6 +70,9 @@ class Lem_in:
 					self.settings.delay *= 1.1
 				if event.key == pygame.K_UP:
 					self.settings.delay /= 1.1
+				if event.key == pygame.K_SPACE:
+					self.pause_vis()
+				
 				
 
 

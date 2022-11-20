@@ -41,7 +41,7 @@ class Title:
 					white, self.settings.bg_colour)
 		self.title_rect = self.title.get_rect()
 		self.title_rect.left = self.screen_rect.left + 70
-		self.title_rect.top = self.screen_rect.top + 20
+		self.title_rect.top = self.screen_rect.top + 40
 
 		self.start_box = pygame.Surface((25, 25))
 		self.start_box.fill(green)
