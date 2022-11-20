@@ -27,6 +27,8 @@ class Settings:
 		self.delay = 500
 
 		self.line = sys.stdin.read().splitlines()
+
+		self.ant_col = 1
 		
 	def read_ants(self):
 		"""read the amount of ants"""
@@ -114,8 +116,10 @@ class Settings:
 		if self.grid_side < 10:
 			self.grid_side = 10
 
-		self.r = 255
-		self.orange = (self.r, 100, 0)
+		# self.r = 255
+		# self.g = 100
+		# self.b = 0
+		# self.orange = (self.r, self.g, self.b)
 		self.source_img = pygame.Surface((self.grid_side, self.grid_side))
 		self.source_img.fill(green)
 		self.sink_img = pygame.Surface((self.grid_side, self.grid_side))
@@ -124,5 +128,5 @@ class Settings:
 		self.room_img.fill(blue)
 		self.midway = pygame.Surface((self.grid_side / 3, self.grid_side / 3))
 		self.midway.fill(light_blue)
-		self.occupied = pygame.Surface((self.grid_side, self.grid_side))
-		self.occupied.fill(self.orange)
+		# self.occupied = pygame.Surface((self.grid_side, self.grid_side))
+		# self.occupied.fill(self.orange)
