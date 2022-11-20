@@ -41,7 +41,7 @@ class Title:
 					white, self.settings.bg_colour)
 		self.title_rect = self.title.get_rect()
 		self.title_rect.left = self.screen_rect.left + 70
-		self.title_rect.top = self.screen_rect.top + 40
+		self.title_rect.top = self.screen_rect.top +30
 
 		self.start_box = pygame.Surface((25, 25))
 		self.start_box.fill(green)
@@ -70,6 +70,9 @@ class Title:
 		up_down_str2 = "keys to change flow speed"
 		self.up_down2 = self.intsructions_font.render(up_down_str2, True,
 					white, self.settings.bg_colour)
+		space_str = "Press SPACE to pause"
+		self.space = self.intsructions_font.render(space_str, True,
+					white, self.settings.bg_colour)
 
 	def draw_title_instructions(self):
 		"""Draw instructions and title"""
@@ -83,6 +86,7 @@ class Title:
 		self.screen.blit(self.sink, (900, 100))
 		self.screen.blit(self.empty, (900, 150))
 		self.screen.blit(self.ant, (900, 200))
-		self.screen.blit(self.up_down1, (70, 150))
-		self.screen.blit(self.up_down2, (45, 180))
+		self.screen.blit(self.up_down1, (70, 140))
+		self.screen.blit(self.up_down2, (45, 170))
+		self.screen.blit(self.space, (70, 210))
 		
