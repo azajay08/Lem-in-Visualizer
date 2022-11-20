@@ -12,8 +12,6 @@ blue = (50, 100, 255)
 orange = (255, 102, 0)
 
 path = os.path.dirname(os.path.abspath(__file__))
-# ant_img_path = pygame.image.load(os.path.join(path, 'images', 'ant_img.bmp'))
-# ant_img = pygame.transform.scale(ant_img_path, (170, 200))
 tfont = os.path.join(path, 'fonts', 'ant_font.ttf')
 ifont = os.path.join(path, 'fonts', 'Nugo.ttf')
 
@@ -29,12 +27,6 @@ class Title:
 		self.title_font = pygame.font.Font(tfont, 80)
 		self.key_font = pygame.font.Font(ifont, 30)
 		self.intsructions_font = pygame.font.Font(ifont, 25)
-
-
-		# self.ant = ant_img
-		# self.ant_rect = self.ant.get_rect()
-		# self.ant_rect.right = self.screen_rect.right - 20
-		# self.ant_rect.top = self.screen_rect.top + 20
 		
 		title_str = "Lem_in"
 		self.title = self.title_font.render(title_str, True,
