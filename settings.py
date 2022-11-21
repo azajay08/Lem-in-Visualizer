@@ -28,7 +28,7 @@ class Settings:
 
 		self.line = sys.stdin.read().splitlines()
 
-		self.ant_col = 1
+		self.ant_col = 0
 		
 	def read_ants(self):
 		"""read the amount of ants"""
@@ -72,6 +72,7 @@ class Settings:
 					'source': self.s_com,
 					'sink': self.e_com,
 					'used': 0,
+					'colour' : 0,
 				}
 				if self.s_com == 1:
 					self.source = line[0]
