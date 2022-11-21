@@ -34,7 +34,7 @@ class Title:
 		self.title = self.title_font.render(title_str, True,
 					white, self.settings.bg_colour)
 		self.title_rect = self.title.get_rect()
-		self.title_rect.left = self.screen_rect.left + 70
+		self.title_rect.left = self.screen_rect.left + 80
 		self.title_rect.top = self.screen_rect.top +30
 
 		self.start_box = pygame.Surface((25, 25))
@@ -72,6 +72,14 @@ class Title:
 		self.space = self.intsructions_font.render(space_str, True,
 					white, self.settings.bg_colour)
 
+		sink_count_str = "Ants in sink:"
+		self.sink_count = self.intsructions_font.render(sink_count_str, True,
+					white, self.settings.bg_colour)
+
+		source_count_str = "Ants in source:"
+		self.source_count = self.intsructions_font.render(source_count_str, True,
+					white, self.settings.bg_colour)
+
 	def draw_title_instructions(self):
 		"""Draw instructions and title"""
 		# self.screen.blit(self.ant, self.ant_rect)
@@ -89,4 +97,7 @@ class Title:
 		self.screen.blit(self.up_down1, (70, 140))
 		self.screen.blit(self.up_down2, (45, 170))
 		self.screen.blit(self.space, (70, 210))
+		self.screen.blit(self.source_count, (500, 95))
+		self.screen.blit(self.sink_count, (500, 170))
+
 		

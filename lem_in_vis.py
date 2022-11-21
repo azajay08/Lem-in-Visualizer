@@ -31,6 +31,7 @@ class Lem_in:
 		self.grid.draw_grid()
 		i = 0
 		while True:
+			# self.ants.count_ants()
 			if i == self.settings.i:
 				i = 0
 			pygame.display.flip()

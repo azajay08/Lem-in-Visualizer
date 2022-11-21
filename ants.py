@@ -1,5 +1,13 @@
 import pygame
 import pygame.font
+import os
+
+white = (255, 255, 255)
+red = (255, 50, 50)
+green = (100, 255, 100)
+
+path = os.path.dirname(os.path.abspath(__file__))
+ifont = os.path.join(path, 'fonts', 'Nugo.ttf')
 
 class Ants:
 	"""Class to draw ants"""
@@ -38,6 +46,7 @@ class Ants:
 
 	def draw_ants(self, line_s):
 		"""functions for drawing the ants"""
+		self.count_ants()
 		i = 0
 		line = line_s.split(' ')
 		self.settings.ant_col += 1
@@ -95,9 +104,30 @@ class Ants:
 
 		if self.settings.sink_count == self.settings.ants:
 			self.settings.source_count = self.settings.ants
-		print(f"Sink count:{self.settings.sink_count}")
-		print(f"Ant count:{self.settings.source_count}")
 		for room in self.rooms:
 			room['used'] = 0
 		if self.settings.ant_col == 3:
 				self.settings.ant_col = 0
+		self.count_ants()
+
+	def	count_ants(self):
+		"""This function will print the amount of ants
+			in the source and sink
+		"""
+		count_font = pygame.font.Font(ifont, 30)
+
+		src_count = str(self.settings.source_count)
+		src_str = "{:}".format(src_count)
+		src_print = count_font.render(src_str, True,
+						green, self.settings.bg_colour)
+		sink_count = str(self.settings.sink_count)
+		sink_str = "{:}".format(sink_count)
+		sink_print = count_font.render(sink_str, True,
+						red, self.settings.bg_colour)
+
+		self.source_clear = pygame.Rect(695, 90, 80, 50)
+		self.screen.fill(self.settings.bg_colour, self.source_clear)
+		self.sink_clear = pygame.Rect(695, 165, 80, 50)
+		self.screen.fill(self.settings.bg_colour, self.sink_clear)
+		self.screen.blit(src_print, (700, 95))
+		self.screen.blit(sink_print, (700, 170))
