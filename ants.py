@@ -1,16 +1,5 @@
 import pygame
-import os
 import pygame.font
-import sys
-import time
-
-grey = (32, 32, 32)
-dark_pink = (139,10,80) #dark pink
-dark_cyan = (0,139,139) # dark cyan
-light_pink = (255, 0, 127) # pink
-light_cyan = (0,238,238) # light cyan
-navy = (0, 0, 25)
-white = (255, 255, 255)
 
 class Ants:
 	"""Class to draw ants"""
@@ -26,21 +15,20 @@ class Ants:
 		self.rooms = self.settings.rooms
 		self.ants = []
 
-	def choose_colour(self, x_co, y_co, col):
+	def choose_colour(self, x_co, y_co, colour):
 		"function that chooses which colour to print ant in"
-		print(col)
 		self.r = 255
 		self.g = 100
 		self.b = 0
-		if col == 1:
+		if colour == 1:
 			self.g = 100
 			self.b = 0
-		elif col == 2:
-			self.g = 150
-			self.b = 50
-		elif col == 3:
-			self.g = 200
-			self.b = 100
+		elif colour == 2:
+			self.g = 160
+			self.b = 60
+		elif colour == 3:
+			self.g = 250
+			self.b = 150
 		orange = (self.r, self.g, self.b)
 		occupied = pygame.Surface((self.settings.grid_side, self.settings.grid_side))
 		occupied.fill(orange)
@@ -53,7 +41,9 @@ class Ants:
 		i = 0
 		line = line_s.split(' ')
 		self.settings.ant_col += 1
-		# print(line)
+		if self.settings.sink_count == self.settings.ants:
+			self.settings.sink_count = 0
+			self.settings.source_count = self.settings.ants
 		while i < len(line):
 			y_grid = self.rect.y
 			x_grid = self.rect.x
@@ -64,14 +54,20 @@ class Ants:
 			for ants in self.ants:
 				if a_num == ants['ant_num']:
 					add_ant = 0
-					col_print = ants['ant_col']
+					colour_num = ants['ant_col']
+					if ants['first_move'] == r_name:
+						self.settings.source_count -= 1
 			if add_ant == 1:
 				new_ant = {
 					'ant_num': int(a_num),
 					'ant_col': self.settings.ant_col,
+					'first_move': r_name
 				}
 				self.ants.append(new_ant)
-				col_print = self.settings.ant_col
+				colour_num = self.settings.ant_col
+				self.settings.source_count -= 1
+
+			# print(self.settings.ants)
 			for room in self.rooms:
 				if room['name'] == r_name:
 					room['used'] = 1
@@ -80,9 +76,10 @@ class Ants:
 					if room['source'] == 1:
 						self.screen.blit(self.settings.source_img, (x_grid, y_grid))
 					elif room['sink'] == 1:
+						self.settings.sink_count += 1
 						self.screen.blit(self.settings.sink_img, (x_grid, y_grid))
 					else:
-						self.choose_colour(x_grid, y_grid, col_print)
+						self.choose_colour(x_grid, y_grid, colour_num)
 				elif room['used'] == 0:
 					x_grid += ((room['x'] - self.settings.smallestx) * (self.settings.scale_x))
 					y_grid += ((room['y'] - self.settings.smallesty) * (self.settings.scale_y))
@@ -96,6 +93,10 @@ class Ants:
 				x_grid = self.rect.x
 			i += 1
 
+		if self.settings.sink_count == self.settings.ants:
+			self.settings.source_count = self.settings.ants
+		print(f"Sink count:{self.settings.sink_count}")
+		print(f"Ant count:{self.settings.source_count}")
 		for room in self.rooms:
 			room['used'] = 0
 		if self.settings.ant_col == 3:
