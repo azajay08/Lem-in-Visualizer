@@ -47,10 +47,10 @@ class Title:
 		self.ant_box3 = pygame.Surface((25, 25))
 		self.ant_box3.fill(orange3)
 
-		start_str = "Starting room"
+		start_str = "Source"
 		self.start = self.key_font.render(start_str, True,
 					white, self.settings.bg_colour)
-		sink_str = "Sink room"
+		sink_str = "Sink"
 		self.sink = self.key_font.render(sink_str, True,
 					white, self.settings.bg_colour)
 		empty_str = "Empty room"
