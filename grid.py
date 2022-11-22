@@ -1,7 +1,6 @@
 import pygame
 import pygame.font
 
-white = (255, 255, 255)
 white_blue = (170, 230, 255)
 
 class Grid:

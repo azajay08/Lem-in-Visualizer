@@ -3,9 +3,6 @@ import os
 import pygame.font
 
 white = (255, 255, 255)
-grey = (175, 175, 175)
-black = (0, 0, 0)
-navy = (0, 0, 25)
 red = (255, 50, 50)
 green = (100, 255, 100)
 blue = (50, 100, 255)

@@ -1,6 +1,5 @@
 import pygame
 import sys
-import os
 from title import Title
 from time import sleep
 from settings import Settings
@@ -31,16 +30,15 @@ class Lem_in:
 		self.grid.draw_grid()
 		i = 0
 		while True:
-			# self.ants.count_ants()
 			if i == self.settings.i:
 				i = 0
 			pygame.display.flip()
 			self._check_events()
 			self.ants.draw_ants(self.settings.split_line[i])
 			
-			# pygame.time.delay(1000)
 			pygame.time.delay(int(self.settings.delay))
 			i += 1
+
 	def pause_vis(self):
 		"""Function that pauses the game"""
 		paused = True
@@ -73,9 +71,6 @@ class Lem_in:
 					self.settings.delay /= 1.1
 				if event.key == pygame.K_SPACE:
 					self.pause_vis()
-				
-				
-
 
 if __name__ == '__main__':
 	lv = Lem_in()

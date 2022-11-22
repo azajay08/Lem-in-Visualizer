@@ -1,7 +1,6 @@
 import pygame
 import sys
 
-navy = (0, 0, 25)
 red = (255, 50, 50)
 green = (100, 255, 100)
 blue = (50, 100, 255)

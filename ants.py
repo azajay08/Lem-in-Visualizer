@@ -75,8 +75,6 @@ class Ants:
 				self.ants.append(new_ant)
 				colour_num = self.settings.ant_col
 				self.settings.source_count -= 1
-
-			# print(self.settings.ants)
 			for room in self.rooms:
 				if room['name'] == r_name:
 					room['used'] = 1
