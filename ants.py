@@ -99,7 +99,6 @@ class Ants:
 				y_grid = self.rect.y
 				x_grid = self.rect.x
 			i += 1
-
 		if self.settings.sink_count == self.settings.ants:
 			self.settings.source_count = self.settings.ants
 		for room in self.rooms:
@@ -118,9 +117,9 @@ class Ants:
 		src_str = "{:}".format(src_count)
 		src_print = count_font.render(src_str, True,
 						green, self.settings.bg_colour)
-		sink_count = str(self.settings.sink_count)
-		sink_str = "{:}".format(sink_count)
-		sink_print = count_font.render(sink_str, True,
+		self.sink_count = str(self.settings.sink_count)
+		self.sink_str = "{:}".format(self.sink_count)
+		self.sink_print = count_font.render(self.sink_str, True,
 						red, self.settings.bg_colour)
 
 		self.source_clear = pygame.Rect(695, 90, 80, 50)
@@ -128,4 +127,4 @@ class Ants:
 		self.sink_clear = pygame.Rect(695, 165, 80, 50)
 		self.screen.fill(self.settings.bg_colour, self.sink_clear)
 		self.screen.blit(src_print, (700, 95))
-		self.screen.blit(sink_print, (700, 170))
+		self.screen.blit(self.sink_print, (700, 170))
