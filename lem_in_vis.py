@@ -34,7 +34,8 @@ class Lem_in:
 				i = 0
 			pygame.display.flip()
 			self._check_events()
-			self.ants.draw_ants(self.settings.split_line[i])
+			if self.settings.split_line[i][:1] == 'L':
+				self.ants.draw_ants(self.settings.split_line[i])
 			
 			pygame.time.delay(int(self.settings.delay))
 			i += 1
