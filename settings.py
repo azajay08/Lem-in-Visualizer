@@ -31,7 +31,7 @@ class Settings:
 		self.source_count = self.ants
 
 	def read_rooms(self):
-		"""read the rooms"""
+		"""read and parse the rooms"""
 		self.rooms = []
 		self.connect = []
 		self.x_size = 0

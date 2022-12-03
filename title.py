@@ -79,7 +79,6 @@ class Title:
 
 	def draw_title_instructions(self):
 		"""Draw instructions and title"""
-		# self.screen.blit(self.ant, self.ant_rect)
 		self.screen.blit(self.title, self.title_rect)
 		self.screen.blit(self.start_box, (850, 50))
 		self.screen.blit(self.sink_box, (850, 100))

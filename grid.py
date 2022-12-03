@@ -19,7 +19,7 @@ class Grid:
 		self.rect.y = 280
 
 	def draw_grid(self):
-		"""draws the map"""
+		"""draws the rooms and links"""
 		y_grid = self.rect.y
 		x_grid = self.rect.x
 		center_xy = self.settings.grid_side / 2
