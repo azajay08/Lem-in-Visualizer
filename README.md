@@ -1,5 +1,7 @@
 # Lem-in-Visualizer
 
+https://user-images.githubusercontent.com/86073849/205643151-ca0e3334-fcfb-4ab2-bc26-01aeb49a574e.mov
+
 This is a visualizer bonus to compliment to Hive(42) project Lem_in.
 
 ## Lem_in
