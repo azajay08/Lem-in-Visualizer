@@ -95,6 +95,7 @@ class Settings:
 		while i < map_len:
 			self.s_line += str(self.line[i]).rstrip(' ') + '\n'
 			i += 1
+		self.s_line += str('L-BREAK') + '\n'
 		self.split_line = self.s_line.split('\n') 
 		self.div = 400
 		if (self.y_size < self.x_size):

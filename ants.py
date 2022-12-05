@@ -48,6 +48,11 @@ class Ants:
 		"""functions for drawing the ants"""
 		self.count_ants()
 		i = 0
+		if line_s == 'L-BREAK':
+			self.settings.source_count = self.settings.ants
+			self.settings.sink_count = 0
+			self.count_ants()
+			return
 		line = line_s.split(' ')
 		self.settings.ant_col += 1
 		if self.settings.sink_count == self.settings.ants:
@@ -99,8 +104,6 @@ class Ants:
 				y_grid = self.rect.y
 				x_grid = self.rect.x
 			i += 1
-		if self.settings.sink_count == self.settings.ants:
-			self.settings.source_count = self.settings.ants
 		for room in self.rooms:
 			room['used'] = 0
 		if self.settings.ant_col == 3:
