@@ -23,7 +23,7 @@ class Grid:
 		y_grid = self.rect.y
 		x_grid = self.rect.x
 		center_xy = self.settings.grid_side / 2
-		center_mid = (self.settings.grid_side / 3) / 2
+		# center_mid = (self.settings.grid_side / 3) / 2
 		self.links = []
 		for room in self.settings.rooms:
 			x_grid += ((room['x'] - self.settings.smallestx) * (self.settings.scale_x))
@@ -40,15 +40,15 @@ class Grid:
 			for link in self.links:
 				if connections['l_1'] == link['name']:
 					link1 = int(link['x_c']), int(link['y_c'])
-					x1 = int(link['x_c'])
-					y1 = int(link['y_c'])
+					# x1 = int(link['x_c'])
+					# y1 = int(link['y_c'])
 			for link in self.links:
 				if connections['l_2'] == link['name']:
 					link2 = int(link['x_c']), int(link['y_c'])
-					x2 = int(link['x_c'])
-					y2 = int(link['y_c'])
-			coord_x = (x1 + x2) / 2 - center_mid
-			coord_y = (y1 + y2) / 2 - center_mid
+					# x2 = int(link['x_c'])
+					# y2 = int(link['y_c'])
+			# coord_x = (x1 + x2) / 2 - center_mid
+			# coord_y = (y1 + y2) / 2 - center_mid
 			pygame.draw.line(self.screen, white_blue, (link1), (link2))
 			# self.screen.blit(self.settings.midway, (coord_x, coord_y))
 		for room in self.settings.rooms:

@@ -102,6 +102,8 @@ class Settings:
 			self.grid_scale = float(self.x_size)
 		else:
 			self.grid_scale = float(self.y_size)
+		if self.grid_scale < 5:
+			self.grid_scale = 6
 		self.grid_side = float(self.div / self.grid_scale)
 		self.scale_x = float(800 / self.x_size)
 		self.scale_y = float(400 / self.y_size)
@@ -113,5 +115,5 @@ class Settings:
 		self.sink_img.fill(red)
 		self.room_img = pygame.Surface((self.grid_side, self.grid_side))
 		self.room_img.fill(blue)
-		self.midway = pygame.Surface((self.grid_side / 3, self.grid_side / 3))
-		self.midway.fill(light_blue)
+		# self.midway = pygame.Surface((self.grid_side / 3, self.grid_side / 3))
+		# self.midway.fill(light_blue)
